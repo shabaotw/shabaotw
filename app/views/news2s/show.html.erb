@@ -49,7 +49,7 @@
 <% @newscomments.each do |post| %>
 <div class="item-comment">
 
-    <div class="item-comment-logo"><%= image_tag("1E.jpg")%></div>
+    <div class="item-comment-logo"><img src="<%= post.user.image %>"></div>
     <div class="item-comment-user">
       <div class="item-comment-name">Alex Guo</div>
       <div class="item-comment-createdat"><%= post.created_at.strftime("%m-%d %H:%M") %></div>

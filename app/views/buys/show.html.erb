@@ -23,6 +23,9 @@
               <div class="item-comment-content3">
                 <div class="sell-content1">電話：</div><div class="sell-content2"><%= @buy.phone %></div>
               </div>
+	      <div class="item-comment-content3">
+                <div class="sell-content1">時間：</div><div class="sell-content2"><%= @buy.time %></div>
+              </div>
               <div class="item-comment-content3">
                 <div class="sell-content1">地點：</div><div class="sell-content2"><%= @buy.location %></div>
               </div>
@@ -64,7 +67,7 @@
       <button class="pure-button button-red">買蝦資訊</button>
 
       <% if current_user == @buy.user %>
-      <%= link_to '修改文章', edit_buy_path, class: "btn btn-warning edit" %>
+      <%= link_to '修改文章', edit_buy_path, class: "pure-button button-edit navbar-right" %>
       <% end %>
 
       <div class="item-comment2">
@@ -81,7 +84,7 @@
             <div class="sell-content1">電話：</div><div class="sell-content2"><%= @buy.phone %></div>
           </div>
           <div class="item-comment-content3">
-            <div class="sell-content1">時間：</div><div class="sell-content2"><%= @buy.date %></div>
+            <div class="sell-content1">時間：</div><div class="sell-content2"><%= @buy.time %></div>
           </div>
           <div class="item-comment-content3">
             <div class="sell-content1">地點：</div><div class="sell-content2"><%= @buy.location %></div>

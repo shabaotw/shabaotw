@@ -4,7 +4,7 @@ class RacesController < ApplicationController
   # GET /races
   # GET /races.json
   def index
-    @races = Race.all.order("date")
+    @races = Race.all.order("month ASC").order("date ASC")
     #order("date")是指定日期排序         order("date DESC") =>另一種排序
   end
 

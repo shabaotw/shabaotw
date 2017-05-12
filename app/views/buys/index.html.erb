@@ -13,7 +13,7 @@
 						<div class="item-location2">
 							<div class="location-icon"><%= image_tag("1D.png") %></div>
 							<div class="location-text"><%= buy.location %></div>
-							<div class="location-people"><%= buy.date %></div>
+							<div class="location-people"><%= buy.created_at.strftime("%m/%d %H:%M") %></div>
 						</div>
 						<!--這段是下方賣蝦狀態區塊-->
 						<div class="item-spot2">
@@ -34,7 +34,7 @@
 						<div class="item-location3">
 							<div class="location-icon"><%= image_tag("1G.png") %></div>
 							<div class="location-text"><%= buy.location %></div>
-							<div class="location-people"><%= buy.date %></div>
+							<div class="location-people"><%= buy.created_at.strftime("%m/%d %H:%M") %></div>
 						</div>
 						<!--這段是下方賣蝦狀態區塊-->
 						<div class="item-spot3">
