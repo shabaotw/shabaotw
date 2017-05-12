@@ -1,0 +1,110 @@
+
+
+
+<div class="sfpost-userprofile">
+	<div class="sfpost-user"><%= shrimpfriendpost.user.name %></div>
+	<div class="sfpost-createdat"><%= shrimpfriendpost.created_at.strftime("%m-%d %H:%M") %></div>
+</div>
+
+
+
+
+<div class="sfpost">
+	<div class="sfpost-row">
+		<% @shrimpfriendposts.each do |shrimpfriendpost| %>
+		、
+		<div class="sfpost-userprofile">
+			<div class="sfpost-user"><%= shrimpfriendpost.user.name %></div>
+			<div class="sfpost-createdat"><%= shrimpfriendpost.created_at.strftime("%m-%d %H:%M") %></div>
+		</div>
+		<div class="sfpost-container">
+			<div class="sfpost-title"><%= shrimpfriendpost.title %></div>
+			<div class="sfpost-content"><%= shrimpfriendpost.content %></div>
+		</div>
+		<% end %>
+	</div>
+</div>
+
+
+
+<div class="table"><!-- table -->
+	<% @shrimpfriendposts.each do |shrimpfriendpost| %>
+	<div class="row"><!-- tr -->
+		<div class="cell1"><!-- td -->
+			<div class="logo"><img src="<%= shrimpfriendpost.user.image %>"></img>
+			</div>
+		</div>
+		<div class="cell2">
+			<%= shrimpfriendpost.user.name %><br>
+			<%= shrimpfriendpost.created_at.strftime("%m-%d %H:%M") %>
+		</div>
+		<div class="cell3">
+			<%= shrimpfriendpost.title %><br>
+			<%= shrimpfriendpost.content %>
+		</div>
+	</div>
+	<% end %>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="sfpost-userprofile">
+	<div class="sfpost-username">
+		<%= shrimpfriendpost.user.name %>
+	</div>
+	<div class="sfpost-createdat">
+		<%= shrimpfriendpost.created_at.strftime("%m-%d %H:%M") %>
+	</div>
+</div>
+
+
+.sfpost{
+width: 600px;
+height: 100px;
+background: #6e2727;
+.left{
+width: 60px;
+float: left;
+.sfpost-logo{
+padding-top: 10px;
+}
+}
+.sfpost-userprofile{
+margin-left: 60px;
+width: 100px;
+.sfpost-username{
+padding-top: 4px;
+font-size: 18px;
+color: rgba(#158c2b, 0.76);
+}
+.sfpost-createdat{
+padding-top: 4px;
+font-size: 15px;
+}
+}
+.sfpost-post{
+width: 440px;
+float: right;
+.sfpost-title{
+font-size: 18px;
+padding-top: 4px;
+}
+.sfpost-content{
+color: rgba(#000000, 0.38);
+}
+}
+}

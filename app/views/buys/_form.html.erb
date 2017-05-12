@@ -1,0 +1,18 @@
+
+      <%= simple_form_for @buy do |f| %>
+      <div class="pure-form pure-form-stacked">
+        <%= f.input :status, priority: [ "待收" ], collection: [ "待收", "已收"],label: '買蝦狀態'%>
+        <%= f.input :date, order: [:month, :day], label: '買蝦日期' %>
+        <%= f.input :phone, label: '買家電話', placeholder: '   請輸入您的手機號碼' %>
+        <%= f.input :location, label: '買蝦地點（最多五個字）', placeholder: '   請輸入買蝦地點，例如：五股、五股瘋蝦' %>
+        <%= f.input :category, priority: [ "公蝦" ], collection: [ "公蝦", "大公蝦", "綜合蝦", "母蝦"],label: '買蝦種類'%>
+        <%= f.input :weight, label: '蝦子重量', placeholder: '   請輸入購買斤數，例如：2斤、5斤' %>
+        <%= f.input :price, label: '購買金額', placeholder: '   請輸入購買金額，例如：500、1200'%>
+        <%= f.input :time, label: '聯絡時間', placeholder: '   請輸入方便聯絡時間或不填寫' %>
+        <%= f.input :content, label: '特別備註', placeholder: '   有沒有什麼特別需要注意的事情想跟你的賣家說呢？', input_html: { class: 'shrimp-content' } %>
+      </div>
+      <div class="shrimp-btn">
+      <%= link_to '回上一頁', sells_path, class: "btn btn-danger" %>
+      <%= f.submit "確定送出", class: "btn btn-success" %>
+      </div>
+    <% end %>

@@ -1,0 +1,37 @@
+<main class="container">
+  <div class="item-list inner">
+    <div class="row">
+      <% @races.each do |race| %>
+      <a href="<%= race_path(race)%>">
+
+        <div class="new col-md-4 col-sm-6 col-xs-12">
+          <div class="item-inner">
+            <!--這段是比賽資訊-->
+            <button class="pure-button button-warning"><%= race.category %></button>
+            <div class="item-title"><%= race.title%></div>
+            <!--這段是比賽地點，參賽人數-->
+            <div class="item-location">
+              <div class="location-icon"><%= image_tag("1B.png") %></div>
+              <div class="location-text"><%= race.location %></div>
+              <div class="location-people"><%= race.people %></div>
+            </div>
+            <!--這段是日期，冠軍獎金-->
+            <div class="item-spot">
+              <div class="datetime">
+                <span class="month"><%= race.month %></span>
+                <span class="date"><%= race.date %></span>
+                <span class="weekdate"><%= race.weekdate %></span>
+              </div>
+              <div class="money">
+                <span class="money-title">冠軍</span>
+                <span class="money-text"><%= race.money %></span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </a>
+      <% end %>
+    </div>
+  </div>
+</main>

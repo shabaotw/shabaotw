@@ -1,0 +1,17 @@
+
+<%= simple_form_for @sell do |f| %>
+<div class="pure-form pure-form-stacked">
+  <%= f.input :status, priority: [ "待賣" ], collection: [ "待售", "已售"],label: '狀態'%>
+  <%= f.input :phone, label: '電話', id: "summernote" %>
+  <%= f.input :location, label: '地點（最多五個字）', placeholder: '   例如：新北、新北瘋釣蝦' %>
+  <%= f.input :category, priority: [ "公蝦" ], collection: [ "公蝦", "大公蝦", "綜合蝦", "母蝦"],label: '蝦子種類'%>
+  <%= f.input :weight, label: '重量', placeholder: '   例如：2斤13兩、5斤' %>
+  <%= f.input :price, label: '總金額', placeholder: '   例如：500、1200'%>
+  <%= f.input :content, label: '備註', placeholder: '   有沒有特別的備註想說呢？', input_html: { class: 'shrimp-content' } %>
+  </div>
+
+  <div class="shrimp-btn">
+  <%= link_to '回上一頁', sells_path, class: "btn btn-danger" %>
+  <%= f.submit "確定送出", class: "btn btn-success" %>
+  </div>
+<% end %>

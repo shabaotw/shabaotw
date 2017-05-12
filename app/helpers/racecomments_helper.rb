@@ -1,0 +1,2 @@
+module RacecommentsHelper
+end

@@ -1,0 +1,6 @@
+<%= simple_form_for [@news2, Newscomment.new] do |f| %>
+<div class="field">
+  <%= f.text_area :content, placeholder: '想留言點什麼呢 ..', class: "form-control" %>
+</div>
+<%= f.submit "確定送出", class: "btn btn-primary" %>
+<% end %>

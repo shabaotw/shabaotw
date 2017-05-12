@@ -1,0 +1,39 @@
+<main class="container2">
+  <div class="item-list inner">
+    <div class="row">
+      <div class="new col-md-12 col-sm-12 col-xs-12">
+        <div class="item-inner2">
+          <!--這段是比賽資訊-->
+
+          <button class="pure-button button-warning"><%= @race.category %></button>
+
+          <% if current_user == @race.user %>
+          <%= link_to '修改文章', edit_race_path, class: "pure-button button-edit navbar-right" %>
+          <% end %>
+
+          <div class="item-title2"><%= @race.title%></div>
+          <div class="item-content"><%= raw @race.imformation %></div>
+
+        </div>
+
+
+
+        <div class="item-commentbox">
+          <%= render 'racecomments/form' %>
+        </div>
+
+        <% @racecomments.each do |post| %>
+        <div class="item-comment">
+          <div class="item-comment-logo"><%= image_tag("1E.jpg")%></div>
+          <div class="item-comment-user">
+            <div class="item-comment-name">Alex Guo</div>
+            <div class="item-comment-createdat"><%= post.created_at.strftime("%m-%d %H:%M") %></div>
+          </div>
+          <div class="item-comment-content"><%= simple_format(post.content) %></div>
+
+        </div>
+        <% end %>
+
+      </div>
+    </div>
+  </main>

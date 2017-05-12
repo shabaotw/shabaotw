@@ -1,0 +1,28 @@
+
+<div class="row">
+  <div class="new col-md-12 col-sm-12 col-xs-12">
+    <div class="item-inner">
+      <div class="pure-form pure-form-stacked">
+        <%= simple_form_for @race do |f| %>
+        <%= f.input :category,label: '文章分類'%>
+        <%= f.input :title, label: '文章標題' %>
+        <%= f.input :location, label: '比賽地點' %>
+        <%= f.input :people, label: '比賽人數' %>
+        <%= f.input :money, label: '冠軍獎金', placeholder: '例如：12,000'%>
+        <%= f.input :month, label: '月份' %>
+        <%= f.input :date, label: '日期' %>
+        <%= f.input :weekdate, label: '星期幾' %>
+        <%= f.input :imformation, label: '文章內容', placeholder: '請輸入補充資訊', id:"summernote"%>
+
+
+      </div>
+
+      <div class="shrimp-btn">
+        <%= link_to '回上一頁', races_path, class: "btn btn-danger" %>
+        <%= f.submit "確定送出", class: "btn btn-success" %>
+
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>

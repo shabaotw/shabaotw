@@ -1,0 +1,23 @@
+
+<main class="container2">
+  <div class="item-list inner">
+
+    <div class="row">
+      <div class="new col-md-12 col-sm-12 col-xs-12">
+        <div class="item-inner2">
+            <div class="modal-header">
+              <h4 class="modal-title">登入</h4>
+              <p>立刻登入會員，啟用更多功能</p>
+            </div>
+            <div class="modal-body">
+              <%= button_to "使用Facebook帳號登入", user_facebook_omniauth_authorize_path,
+               class: "button-xlarge pure-button button-facebook" %>
+            </div>
+            <div class="modal-footer">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

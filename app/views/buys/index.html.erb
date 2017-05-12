@@ -1,0 +1,57 @@
+<main class="container">
+	<div class="item-list inner">
+		<div class="row">
+			<% @buys.each do |buy| %>
+			<a href="<%= buy_path(buy)%>">
+				<div class="new col-md-4 col-sm-6 col-xs-12">
+					<div class="item-inner">
+
+						<% if buy.status == "待收" %>
+						<button class="pure-button button-success">買蝦資訊</button>
+						<div class="item-title_sellshow">Alex Guo</div>
+						<!--這段是地點icon , 賣蝦時間 -->
+						<div class="item-location2">
+							<div class="location-icon"><%= image_tag("1D.png") %></div>
+							<div class="location-text"><%= buy.location %></div>
+							<div class="location-people"><%= buy.date %></div>
+						</div>
+						<!--這段是下方賣蝦狀態區塊-->
+						<div class="item-spot2">
+							<div class="datetime2">
+								待收
+							</div>
+							<div class="money2">
+								<span class="money-title2"><%= buy.category %> <%= buy.weight %></span>
+								<span class="money-text2"><%= buy.price %></span>
+							</div>
+						</div>
+
+						<% elsif buy.status =="已收" %>
+
+						<button class="pure-button button-red">買蝦資訊</button>
+						<div class="item-title_sellshow">Alex Guo</div>
+						<!--這段是地點icon , 賣蝦時間 -->
+						<div class="item-location3">
+							<div class="location-icon"><%= image_tag("1G.png") %></div>
+							<div class="location-text"><%= buy.location %></div>
+							<div class="location-people"><%= buy.date %></div>
+						</div>
+						<!--這段是下方賣蝦狀態區塊-->
+						<div class="item-spot3">
+							<div class="datetime3">
+								<%= buy.status %>
+							</div>
+							<div class="money3">
+								<span class="money-title3"><%= buy.category %> <%= buy.weight %></span>
+								<span class="money-text2"><%= buy.price %></span>
+							</div>
+						</div>
+
+						<% end %>
+					</div>
+				</div>
+			</a>
+			<% end %>
+		</div>
+	</div>
+</main>

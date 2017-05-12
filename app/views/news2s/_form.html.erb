@@ -1,0 +1,30 @@
+
+<div class="row">
+  <div class="new col-md-12 col-sm-12 col-xs-12">
+    <div class="item-inner">
+      <div class="pure-form pure-form-stacked">
+        <%= simple_form_for @news2 do |f| %>
+        <%= f.input :category,label: '文章分類'%>
+        <%= f.input :title, label: '文章標題' %>
+        <%= f.input :racelocation, label: '比賽地點' %>
+        <%= f.input :peopel, label: '比賽人數' %>
+        <%= f.input :money, label: '冠軍獎金', placeholder: '例如：12,000'%>
+        <%= f.input :month, label: '月份' %>
+        <%= f.input :date, label: '日期' %>
+        <%= f.input :weekdate, label: '星期幾' %>
+        <%= f.input :Image, label: '圖片', input_html: { class: 'shrimp-content' } %>
+
+        <div class="field">
+          <%= f.label :content %>
+          <%= f.text_area :content, id: "summernote" %>
+        </div>
+
+      </div>
+      <div class="actions">
+        <%= f.submit %>
+      </div>
+
+      <% end %>
+    </div> 
+  </div>
+</div>

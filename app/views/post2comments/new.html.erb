@@ -1,0 +1,22 @@
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 col-sm-6 col-xs-12">
+      <div class="shrimp-wrap">
+        <div class="shrimp-container">
+          <div class="pure-form pure-form-stacked">
+            <h1>新增留言</h1>
+            <%= simple_form_for [@post2,@post2comment] do |f| %>
+            <%= f.input :content, label: '留言內容', input_html: { class: 'shrimp-content' } %>
+
+            <div class="shrimp-btn">
+              <%= link_to '回上一頁', post2_path(@post2), class: "btn btn-danger" %>
+              <%= f.submit "確定送出", class: "btn btn-success" %>
+            </div>
+          </div>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

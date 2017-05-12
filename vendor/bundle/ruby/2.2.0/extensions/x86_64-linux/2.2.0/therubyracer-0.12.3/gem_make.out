@@ -1,0 +1,39 @@
+/home/ubuntu/.rvm/rubies/ruby-2.2.2/bin/ruby -r ./siteconf20170131-4588-zfixgp.rb extconf.rb 
+checking for main() in -lpthread... yes
+creating Makefile
+
+make "DESTDIR=" clean
+
+make "DESTDIR="
+compiling external.cc
+compiling template.cc
+compiling backref.cc
+compiling trycatch.cc
+compiling exception.cc
+compiling handles.cc
+compiling rr.cc
+compiling signature.cc
+compiling accessor.cc
+compiling array.cc
+compiling context.cc
+compiling primitive.cc
+compiling constraints.cc
+compiling object.cc
+compiling value.cc
+compiling gc.cc
+compiling date.cc
+compiling script.cc
+compiling v8.cc
+compiling message.cc
+compiling constants.cc
+compiling string.cc
+compiling function.cc
+compiling locker.cc
+compiling stack.cc
+compiling init.cc
+compiling heap.cc
+compiling invocation.cc
+linking shared-object v8/init.so
+
+make "DESTDIR=" install
+/usr/bin/install -m 0755 init.so ./.gem.20170131-4588-z7l56l/v8

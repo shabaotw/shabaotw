@@ -1,0 +1,58 @@
+<main class="container">
+  <div class="item-list inner">
+    <div class="grid" data-packery='{ "itemSelector": ".grid-item" }'>
+      <div class="row">
+        <% @news2s.each do |news2| %>
+        <a href="<%= news2_path(news2)%>">
+          <div class="new grid-item col-md-4 col-sm-6 col-xs-12">
+
+            <div class="item-inner">
+              <!--這段是比賽資訊-->
+              <% if news2.category =="比賽資訊"%>
+              <button class="pure-button button-warning"><%= news2.category %></button>
+              <div class="item-title"><%= news2.title%></div>
+              <!--這段是比賽地點，參賽人數-->
+              <div class="item-location">
+                <div class="location-icon"><%= image_tag("1B.png") %></div>
+                <div class="location-text"><%= news2.racelocation %></div>
+                <div class="location-people"><%= news2.peopel %></div>
+              </div>
+              <!--這段是日期，冠軍獎金-->
+              <div class="item-spot">
+                <div class="datetime">
+                  <span class="month"><%= news2.month %></span>
+                  <span class="date"><%= news2.date %></span>
+                  <span class="weekdate"><%= news2.weekdate %></span>
+                </div>
+                <div class="money">
+                  <span class="money-title">冠軍</span>
+                  <span class="money-text"><%= news2.money %></span>
+                </div>
+              </div>
+              <!--這段是釣蝦新聞-->
+              <% elsif news2.category =="釣蝦新聞" %>
+              <button class="pure-button button-success"><%= news2.category %></button>
+              <div class="item-title"><%= news2.title%></div>
+              <!--這段是蝦場活動文章日期-->
+              <div class="item-newsdate">
+                <div class="news-date">日期</div>
+                <div class="news-date2"><%= news2.date %></div>
+              </div>
+              <!--這段是蝦場活動-->
+              <% elsif news2.category =="蝦場活動" %>
+              <button class="button-error pure-button">蝦場活動</button>
+              <div class="item-title"><%= news2.title%></div>
+              <!--這段是蝦場活動文章日期-->
+              <div class="item-activitydate">
+                <div class="activity-date">日期</div>
+                <div class="activity-date2"><%= news2.date %></div>
+              </div>
+              <% end %>
+            </div>
+          </div>
+        </a>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</main>

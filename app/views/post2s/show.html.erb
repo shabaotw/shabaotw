@@ -1,0 +1,48 @@
+<div class="container">
+  <div class="row">
+    <div class="sell-box col-md-8 col-sm-12 col-xs-12">
+      <div class="post2-bg">
+        <div class="post2-post">
+          <div class="post2-title">
+          <%= @post2.title %>
+          </div>
+          <div class="post2-createdat">
+            <%= @post2.created_at.strftime("20%y / %m / %d")%>
+            <%= @post2.author %>
+            <% if current_user %>
+            <%= link_to '修改文章', edit_news2_path(@post2), class:"btn btn-warning" %>
+            <% end %>
+          </div>
+          <hr>
+          <div class="post2-content">
+            <%= raw @post2.content%>
+          </div>
+        </div>
+      </div>
+
+      <div class="sell-count">
+        <div class="sell-count2">
+          <%= @post2.post2comments.count %>篇留言
+          <%= link_to '我要留言', new_post2_post2comment_path(@post2), class: "sell-coun3" %>
+
+        </div>
+      </div>
+
+     
+      </div>
+      <%= render "partial/sidebar" %>
+
+
+
+
+
+
+
+    </div>
+
+  </div>
+</div>
+
+
+<%= link_to 'Edit', edit_post2_path(@post2) %> |
+<%= link_to 'Back', post2s_path %>

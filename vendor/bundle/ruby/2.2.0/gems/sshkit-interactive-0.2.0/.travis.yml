@@ -1,0 +1,31 @@
+sudo: false
+
+language: ruby
+
+rvm:
+  - ruby-2.2.5
+  - ruby-2.3.1
+  - rbx-2.5.8
+  - jruby-1.7
+  - jruby-9.1.2.0
+
+gemfile:
+  - spec/gemfiles/net-ssh2_8.gemfile
+  - spec/gemfiles/net-ssh2_9.gemfile
+  - spec/gemfiles/net-ssh3_0.gemfile
+  - spec/gemfiles/net-ssh3_1.gemfile
+  - spec/gemfiles/net-ssh3_2.gemfile
+
+matrix:
+  exclude:
+    - rvm: jruby-1.7
+      gemfile: spec/gemfiles/net-ssh3_0.gemfile
+    - rvm: jruby-1.7
+      gemfile: spec/gemfiles/net-ssh3_1.gemfile
+    - rvm: jruby-1.7
+      gemfile: spec/gemfiles/net-ssh3_2.gemfile
+
+before_install:
+  - gem install bundler -v '~> 1.13'
+
+script: bundle exec rake spec

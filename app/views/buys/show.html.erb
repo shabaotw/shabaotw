@@ -1,0 +1,122 @@
+<main class="container2">
+  <div class="item-list inner">
+    <div class="row">
+      <div class="new col-md-12 col-sm-12 col-xs-12">
+        <div class="item-inner2">
+          <% if @buy.status == "待收" %>
+          <button class="pure-button button-success">買蝦資訊</button>
+
+          <% if current_user == @buy.user %>
+          <%= link_to '修改文章', edit_buy_path, class: "pure-button button-edit navbar-right" %>
+          <% end %>
+
+          <div class="item-comment2">
+            <div class="item-comment-logo"><img src="<%= @buy.user.image %>"></div>
+            <div class="item-comment-user">
+              <div class="item-comment-name"><%= @buy.user.name %></div>
+              <div class="item-comment-createdat"><%= @buy.created_at.strftime("%m/%d %H:%M") %></div>
+            </div>
+            <div class="sell-box">
+              <div class="item-comment-content3">
+                <div class="sell-content1">狀態：</div><div class="sell-content2"><%= @buy.status %></div>
+              </div>
+              <div class="item-comment-content3">
+                <div class="sell-content1">電話：</div><div class="sell-content2"><%= @buy.phone %></div>
+              </div>
+              <div class="item-comment-content3">
+                <div class="sell-content1">地點：</div><div class="sell-content2"><%= @buy.location %></div>
+              </div>
+              <div class="item-comment-content3">
+                <div class="sell-content1">蝦種：</div><div class="sell-content2"><%= @buy.category %></div>
+              </div>
+              <div class="item-comment-content3">
+                <div class="sell-content1">重量：</div><div class="sell-content2"><%= @buy.weight %></div>
+              </div>
+              <div class="item-comment-content3">
+                <div class="sell-content1">總金額：</div><div class="sell-content2"><%= @buy.price %></div>
+              </div>
+              <div class="item-comment-content3">
+                <div class="sell-content1">備註：</div><div class="sell-content2"><%= raw @buy.content %></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="item-commentbox">
+          <%= render file: "app/views/buycomments/new" %>
+        </div>
+
+        <% @buycomments.each do |post| %>
+        <div class="item-comment">
+          <div class="item-comment-logo"><img src="<%= post.user.image %>"></div>
+          <div class="item-comment-user">
+            <div class="item-comment-name"><%= post.user.name %></div>
+            <div class="item-comment-createdat"><%= post.created_at.strftime("%m-%d %H:%M") %></div>
+          </div>
+          <div class="item-comment-content"><%= simple_format(post.content) %></div>
+        </div>
+
+        <% end %>
+
+      </div>
+      <% elsif @buy.status == "已收" %>
+
+      <button class="pure-button button-red">買蝦資訊</button>
+
+      <% if current_user == @buy.user %>
+      <%= link_to '修改文章', edit_buy_path, class: "btn btn-warning edit" %>
+      <% end %>
+
+      <div class="item-comment2">
+        <div class="item-comment-logo"><img src="<%= @buy.user.image %>"></div>
+        <div class="item-comment-user">
+          <div class="item-comment-name2"><%= @buy.user.name %></div>
+          <div class="item-comment-createdat"><%= @buy.created_at.strftime("%m/%d %H:%M") %></div>
+        </div>
+        <div class="sell-box">
+          <div class="item-comment-content3">
+            <div class="sell-content1">狀態：</div><div class="sell-content2"><%= @buy.status %></div>
+          </div>
+          <div class="item-comment-content3">
+            <div class="sell-content1">電話：</div><div class="sell-content2"><%= @buy.phone %></div>
+          </div>
+          <div class="item-comment-content3">
+            <div class="sell-content1">時間：</div><div class="sell-content2"><%= @buy.date %></div>
+          </div>
+          <div class="item-comment-content3">
+            <div class="sell-content1">地點：</div><div class="sell-content2"><%= @buy.location %></div>
+          </div>
+          <div class="item-comment-content3">
+            <div class="sell-content1">蝦種：</div><div class="sell-content2"><%= @buy.category %></div>
+          </div>
+          <div class="item-comment-content3">
+            <div class="sell-content1">重量：</div><div class="sell-content2"><%= @buy.weight %></div>
+          </div>
+          <div class="item-comment-content3">
+            <div class="sell-content1">總金額：</div><div class="sell-content2"><%= @buy.price %></div>
+          </div>
+          <div class="item-comment-content3">
+            <div class="sell-content1">備註：</div><div class="sell-content2"><%= raw @buy.content %></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="item-commentbox">
+      <%= render file: "app/views/buycomments/new" %>
+    </div>
+
+    <% @buycomments.each do |post| %>
+    <div class="item-comment">
+      <div class="item-comment-logo"><img src="<%= post.user.image %>"></div>
+      <div class="item-comment-user">
+        <div class="item-comment-name2"><%= post.user.name %></div>
+        <div class="item-comment-createdat"><%= post.created_at.strftime("%m/%d %H:%M") %></div>
+      </div>
+      <div class="item-comment-content"><%= simple_format(post.content) %></div>
+    </div>
+    <% end %>
+    <% end %>
+  </div>
+</div>
+</main>
