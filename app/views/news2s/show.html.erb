@@ -10,7 +10,8 @@
 
           <% if current_user == @news2.user %>
           <%= link_to '修改文章', edit_news2_path(@news2), class:"pure-button button-edit navbar-right" %>
-          <% end %>
+          <%= link_to 'Destroy', @news2, method: :delete, data: { confirm: 'Are you sure?' } %>
+	  <% end %>
 
           <div class="item-title2"><%= @news2.title%></div>
           <div class="item-content"><%= raw @news2.content %></div>
@@ -21,7 +22,8 @@
 
           <% if current_user == @news2.user %>
           <%= link_to '修改文章', edit_news2_path(@news2), class:"btn button-edit navbar-right" %>
-          <% end %>
+          <%= link_to 'Destroy', @news2, method: :delete, data: { confirm: 'Are you sure?' } %>
+	  <% end %>
 
           <div class="item-title2"><%= @news2.title%></div>
           <div class="item-content"><%= raw @news2.content %></div>
@@ -32,7 +34,8 @@
 
           <% if current_user == @news2.user %>
           <%= link_to '修改文章', edit_news2_path(@news2), class:"btn button-edit navbar-right" %>
-          <% end %>
+          <%= link_to 'Destroy', @news2, method: :delete, data: { confirm: 'Are you sure?' } %>
+	  <% end %>
 
           <div class="item-title"><%= @news2.title%></div>
           <div class="item-content"><%= raw @news2.content %></div>
@@ -51,7 +54,7 @@
 
     <div class="item-comment-logo"><img src="<%= post.user.image %>"></div>
     <div class="item-comment-user">
-      <div class="item-comment-name">Alex Guo</div>
+      <div class="item-comment-name"><%= post.user.name%></div>
       <div class="item-comment-createdat"><%= post.created_at.strftime("%m-%d %H:%M") %></div>
     </div>
     <div class="item-comment-content"><%= simple_format(post.content) %></div>

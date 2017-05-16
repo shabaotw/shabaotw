@@ -9,7 +9,8 @@
 
           <% if current_user == @race.user %>
           <%= link_to '修改文章', edit_race_path, class: "pure-button button-edit navbar-right" %>
-          <% end %>
+	  <%= link_to 'Destroy', @race, method: :delete, data: { confirm: 'Are you sure?' } %>          
+	  <% end %>
 
           <div class="item-title2"><%= @race.title%></div>
           <div class="item-content"><%= raw @race.imformation %></div>
