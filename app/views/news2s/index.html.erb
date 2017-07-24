@@ -5,7 +5,6 @@
         <% @news2s.each do |news2| %>
         <a href="<%= news2_path(news2)%>">
           <div class="new grid-item col-md-4 col-sm-6 col-xs-12">
-
             <div class="item-inner">
               <!--這段是比賽資訊-->
               <% if news2.category =="比賽資訊"%>
@@ -13,21 +12,14 @@
               <div class="item-title"><%= news2.title%></div>
               <!--這段是比賽地點，參賽人數-->
               <div class="item-location">
-                <div class="location-icon"><%= image_tag("1B.png") %></div>
+                <div class="location-icon"><%= image_tag("icon-location.png") %></div>
                 <div class="location-text"><%= news2.racelocation %></div>
                 <div class="location-people"><%= news2.peopel %></div>
               </div>
               <!--這段是日期，冠軍獎金-->
               <div class="item-spot">
-                <div class="datetime">
-                  <span class="month"><%= news2.month %></span>
-                  <span class="date"><%= news2.date %></span>
-                  <span class="weekdate"><%= news2.weekdate %></span>
-                </div>
-                <div class="money">
-                  <span class="money-title">冠軍</span>
-                  <span class="money-text"><%= news2.money %></span>
-                </div>
+                <%= raw news2.Image %>
+
               </div>
               <!--這段是釣蝦新聞-->
               <% elsif news2.category =="釣蝦新聞" %>

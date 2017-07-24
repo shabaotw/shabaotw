@@ -40,10 +40,6 @@ gem 'summernote-rails'
 gem 'codemirror-rails'
 gem 'will_paginate'
 
-group :production do
-   gem "mysql2"
- end
-
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

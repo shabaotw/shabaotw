@@ -1,6 +1,6 @@
 class News2sController < ApplicationController
   before_action :set_news2, only: [:show, :edit, :update, :destroy]
-  authorize_resource :news2
+  
   # GET /news2s
   # GET /news2s.json
   def index

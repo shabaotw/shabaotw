@@ -4,6 +4,7 @@
 <div class="container">
   <div class="row">
     <% @post2s.each do |post2| %>
+
     <a href="<%= post2_path(post2)%>">
         <div class="col-md-4 col-sm-6 col-xs-12 ">
         <div class="post2">
@@ -13,6 +14,7 @@
            <div class="post2-createdat"><p><%= post2.created_at.strftime("20%y / %m / %d")%>   |     <%= post2.author %></p></div>
           <div class="post2-category"><%= post2.category %></div>
         </div>
+      </button>
       </div>
     </a>
    <% end %>

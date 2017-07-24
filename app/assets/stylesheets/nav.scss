@@ -1,33 +1,17 @@
 $nav-h: 50px;
-header.hero{
-  @media(max-width:780px){
-    z-index: 3;
-    height:$nav-h;
-    background: none;
-  }
-}
 
 
-.navbar-header{
-  @media(max-width:780px){
-    position: absolute;
-    top:0;
-    left:0;
-    right:0;
-    height:$nav-h;
-    z-index: 999;
-    background: #fff;
-    text-align: center;
-    box-shadow: 0 0 10px rgba(0,0,0,0.3);
-    .navbar-brand{
-      float: none;
-      display: inline-block;
-    }
-  }
-}
+
+
 .navbar-brand{
   font-size: 28px !important;
 }
+
+.nav-wrap a{
+  @media(min-width:780px){
+    color: #fff !important;
+    }
+  }
 .nav-wrap{
   padding-top: 10px;
   @media(max-width:780px){

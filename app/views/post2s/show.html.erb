@@ -4,7 +4,7 @@
       <div class="post2-bg">
         <div class="post2-post">
           <div class="post2-title">
-          <%= @post2.title %>
+            <%= @post2.title %>
           </div>
           <div class="post2-createdat">
             <%= @post2.created_at.strftime("20%y / %m / %d")%>
@@ -27,21 +27,12 @@
 
         </div>
       </div>
-
-     
-      </div>
-      <%= render "partial/sidebar" %>
-
-
-
-
-
-
-
     </div>
+    <%= render "partial/sidebar" %>
 
   </div>
 </div>
+
 
 
 <%= link_to 'Edit', edit_post2_path(@post2) %> |
