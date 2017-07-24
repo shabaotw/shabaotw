@@ -29,30 +29,22 @@ body,html{
   height: 100%;
 }
 .wrap{
-  background: #ebe8e8;
+  background: #201F34;
   height: auto;
   min-height: 100%;
-
+ @media(max-width:400px){
+  background: #272739;
+ }
 }
 
 .hero{
   position: relative;
-<<<<<<< Updated upstream
-  height: 400px; 
-  background: url("http://i.imgur.com/5bYCTyR.jpg") no-repeat center/cover;
-=======
-<<<<<<< HEAD
   height: 400px;
-  background: url("3.jpg") no-repeat center/cover;
-=======
-  height: 400px; 
-  background: url("http://i.imgur.com/5bYCTyR.jpg") no-repeat center/cover;
->>>>>>> origin/master
->>>>>>> Stashed changes
+  background: url("http://i.imgur.com/w97rG12.jpg") no-repeat center/cover;
   z-index: 1;
   @media(max-width:400px){
-    height: 300px;
-    background: url("bg2.jpg") center/cover;
+    height: 180px;
+    background: url("http://i.imgur.com/VofgOd9.png") center/cover;
   }
 
 }
@@ -69,7 +61,7 @@ body,html{
   width: 960px;
 }
 
-@media (max-width:768px) and (max-width:1200px){
+@media (min-width:768px) and (max-width:1200px){
   .container2{
     position: relative;
     z-index: 2;
@@ -78,6 +70,14 @@ body,html{
   }
 }
 
+@media (max-width:768px){
+  .container{
+    position: relative;
+    margin: 0 auto;
+    width: 90%;
+    z-index: 0;
+  }
+}
 .inner{
   margin: 0 auto;
 }

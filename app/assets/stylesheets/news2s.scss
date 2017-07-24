@@ -16,7 +16,7 @@ main.container,main.container2{
 .item-list.inner{
   margin-top: -100px;
   @media(max-width:780px){
-    margin-top: -130px;
+    margin-top: 0;
   }
 }
 
